@@ -1,10 +1,6 @@
 import json
 
 with open("Datos.json","r") as archivo:
-    datos = json.load(archivo)
-    print(datos)
-
-'''
     contenido = archivo.read()
 
 datos = json.loads(contenido)
@@ -16,6 +12,7 @@ for dato in datos:
     print(f"Nombre: {nombre}")
     print(f"Edad: {edad}")
     print(f"Ciudad: {ciudad}\n")
-Para ver mejor la info.
-'''
+
+print("Enter para salir")
+input()
 

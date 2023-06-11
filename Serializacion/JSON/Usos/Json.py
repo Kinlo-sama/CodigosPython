@@ -1,8 +1,9 @@
 import json
 dato = []
-datos = {}
+
 with open("Datos.json","a") as archivo:
     while True:
+        datos = {}
         nombre = input("Nombre:")
         edad = int(input("Edad:"))
         ciudad = input("Ciudad:")
@@ -14,5 +15,5 @@ with open("Datos.json","a") as archivo:
         if op == 2:
             break
 
-    json.dump(dato,archivo)
+    json.dump(dato,archivo,indent = 4)#No se que me causa ver lo hermoso que se ve indexado con 4 espacios 
 

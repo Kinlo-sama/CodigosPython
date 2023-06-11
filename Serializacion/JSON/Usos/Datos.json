@@ -1,1 +1,12 @@
-[{"Nombre": "Fernando", "Edad": 21, "Ciudad": "Veracruz"}, {"Nombre": "Fernando", "Edad": 21, "Ciudad": "Veracruz"}, {"Nombre": "Fernando", "Edad": 21, "Ciudad": "Veracruz"}]
+[
+    {
+        "Nombre": "Leonardo",
+        "Edad": 21,
+        "Ciudad": "v"
+    },
+    {
+        "Nombre": "Fernanda",
+        "Edad": 21,
+        "Ciudad": "v"
+    }
+]
