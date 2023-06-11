@@ -106,13 +106,15 @@ class Numero:
 
                 if numGrupos == 3:
                     nombre += self.tresDig("".join(numero)) + " millones "
-                    numGrupos -= 1
+
                 elif numGrupos == 2:
                     nombre += self.tresDig("".join(numero)) + " mil "
-                    numGrupos -= 1
+
                 elif numGrupos == 1:
                     nombre += self.tresDig("".join(numero))
-                    numGrupos -= 1
+
+                numGrupos -= 1
+                
         return nombre
 
     #**************************
