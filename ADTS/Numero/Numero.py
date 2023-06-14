@@ -116,7 +116,44 @@ class Numero:
                 numGrupos -= 1
                 
         return nombre
-
+    #**************************Funcion para verificar divisibilidad
+    def divisiblePor(self,numero):
+        termina2 = [0,2,4,6,8]
+        numeroLista = [int(i) for i in self.numero]
+        
+        if numero == 2:
+             return int(self.numero[-1]) in termina2
+            
+        elif numero == 3:
+            return sum(numeroLista) % 3 == 0
+        
+        elif numero == 4:
+            condicion1 = numeroLista[-1] == 0 and numeroLista[-2] == 0
+            if len(numeroLista) > 1:
+                condicion2 = int(self.numero[-2] + self.numero[-1]) % 4 == 0
+            else:
+                condicion2 = numeroLista[-1] % 4 == 0
+            return condicion1 or condicion2
+        
+        elif numero == 5:
+            return numeroLista[-1] == 0 or numeroLista[-1] == 5
+        
+        elif numero == 6:
+            return self.divisiblePor(2) and self.divisiblePor(3)
+        
+        elif numero == 7:
+            total = int(self.numero[:-1]) - numeroLista[-1] * 2
+            return total == 0 or total % 7 == 0
+        elif numero == 8:
+            condicion1 = sum(numeroLista[-3:]) == 0
+            condicion2 = int(self.numero[-3:]) % 8 == 0
+            return condicion1 or condicion2
+        elif numero == 9:
+            return sum(numeroLista) % 9 == 0
+        
+        else:
+            print("No lo es")
+            return None
     #**************************
         
     def __add__(self,otro):
@@ -142,13 +179,15 @@ class Numero:
 
 #***********************************FIN de ADT Numero ***************************************************+
 #Pruebas--Esta clase puede sumar y obtener el resultado de maximo -999 999 999 hasta 999 999 999 por ahora
-'''
+
 def main():
-    for i in range(40):
-        num = random.randint(-1000,10000)
-        print(Numero(num),":",num)
+    num = Numero(23)
+    if num.divisiblePor(9):
+        print("Si lo es")
+    else:
+        print("No lo es")
 
 #Quita las comillas para probar directamente aqui 
 if __name__ == "__main__":
     main()
-'''
+
