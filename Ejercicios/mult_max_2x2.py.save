@@ -1,0 +1,16 @@
+def matriz2x2():
+	matrixA1 = [input() for j in range(2)]
+	matrixA2 = [input() for i in range(2)]
+	matrix=[matrixA1,matrixA2]
+	return matrix 
+def mult(m1,m2):
+	mt_re=[]
+	for i in range(2):
+		mt_re.append([])
+		for j in range(2):
+			a_ij= m1[i][j] * m2[j][i]
+
+matrizA= matriz2x2()
+matrizB= matriz2x2()
+print(matrizA)
+print(matrizB)
