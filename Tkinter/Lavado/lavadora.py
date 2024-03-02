@@ -6,13 +6,11 @@ Created on Fri Mar  1 22:19:18 2024
 """
 
     
-
 import tkinter as tk
 from PIL import Image, ImageTk
 import random 
 
 def LavarQ1():
-    #etiqueta.pack()
     vibrar()
 
 def vibrar():
@@ -28,18 +26,18 @@ def vibrar():
 # Crear una ventana
 ventana = tk.Tk()
 ventana.title("Mostrar Imagen")
+ventana.geometry("700x600")  # Cambia el tamaño de la ventana
 
+# Crear un lienzo
+canvas = tk.Canvas(ventana, width=600, height=450)  # Ajusta el tamaño del lienzo al de la ventana
+canvas.pack()
 # Cargar la imagen
 imagen = Image.open("./Estado1.jpg")
 imagen_tk = ImageTk.PhotoImage(imagen)
 
-# Crear un lienzo
-canvas = tk.Canvas(ventana, width=400, height=300)
-canvas.pack()
 
 # Mostrar la imagen en el lienzo
-imagen_id = canvas.create_image(200, 150, image=imagen_tk)
-
+imagen_id = canvas.create_image(300, 225, image=imagen_tk)  # Centra la imagen en el lienzo
 
 # Crear un widget de etiqueta para mostrar la imagen
 etiqueta = tk.Label(ventana, image=imagen_tk)
